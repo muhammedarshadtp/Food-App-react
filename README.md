@@ -21,3 +21,9 @@
 -Differnt dev and prod bundles
 
 
+
+
+  React  component-
+  1.Class Based component - OLD
+  2.Function component
+
