@@ -1,29 +1,8 @@
-# React
+# React + Vite
 
-# Parcel
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
--Dev Build
--Local Server
--HMR = Hot Module Replacement
--File Watching Algorithum - Written in C++
--Caching - Faster Builds
--Image Optimization
--Minification
--Bundling
--Compress
--Consistant Hashing
--Code Splitting
--Differential Bundling - support older Browsers
--Diagnostic
--Error Handling
--HTTPs
--Tree Shaking - remove unused code
--Differnt dev and prod bundles
+Currently, two official plugins are available:
 
-
-
-
-  React  component-
-  1.Class Based component - OLD
-  2.Function component
-
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

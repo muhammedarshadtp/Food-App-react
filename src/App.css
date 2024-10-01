@@ -1,0 +1,95 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid black;
+  padding: 0 20px;
+}
+
+
+
+.logo {
+  width: 150px;
+}
+
+.nav-items {
+  flex-grow: 1; /* This makes the nav-items take up all available space */
+  display: flex;
+  font-size: 20px;
+  justify-content: center; /* Center the nav-items */
+}
+
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+}
+
+.nav-items > ul > li {
+  padding: 15px;
+  margin: 15px;
+}
+/* Container to hold the restaurant cards */
+.res-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ensures up to 5 columns, equal size */
+  gap: 20px; /* Adds spacing between the cards */
+  padding: 20px;
+}
+
+/* Style for the individual cards */
+.res-card {
+  width: 100%;
+  max-width: 200px; /* Ensures max width for each card */
+  margin-bottom: 20px; /* Space between rows */
+  height: auto; /* Allow the height to adjust automatically based on content */
+  border: 1px solid #e0e0e0; /* Light border */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  overflow: hidden; /* Make sure the content stays inside the card */
+  background-color: #fff; /* White background */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+.res-card:hover {
+  cursor: pointer;
+  transform: translateY(-5px); /* Lift up on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
+}
+
+/* Image styling */
+.res-card img {
+  width: 100%; /* Full width of the card */
+  height: 150px; /* Set a fixed height for the image */
+  object-fit: cover; /* Ensure the image covers the entire area */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+/* Title styling */
+.res-card h3 {
+  font-size: 18px; /* Font size for the title */
+  margin: 10px 0 5px; /* Space around the title */
+  color: #333; /* Darker color for the text */
+}
+
+/* Description and rating styling */
+.res-card h4 {
+  font-size: 14px; /* Font size for the description */
+  margin: 5px 0; /* Space below the description */
+  color: #666; /* Lighter color for the text */
+}
+
+.res-card h5 {
+  font-size: 12px; /* Smaller font size for the delivery time */
+  margin: 5px 0; /* Space around the time */
+  color: #888; /* Light color for the delivery time */
+  font-weight: normal;
+}
+
+/* Align content to the center */
+.res-card .res-content {
+  padding: 15px; /* Padding inside the card */
+  text-align: center; /* Center-align the content */
+}
+
