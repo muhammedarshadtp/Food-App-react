@@ -32,10 +32,11 @@
 /* Container to hold the restaurant cards */
 .res-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Ensures up to 5 columns, equal size */
+  grid-template-columns: repeat(5, 1fr); /* Ensures exactly 5 columns */
   gap: 20px; /* Adds spacing between the cards */
   padding: 20px;
 }
+
 
 /* Style for the individual cards */
 .res-card {

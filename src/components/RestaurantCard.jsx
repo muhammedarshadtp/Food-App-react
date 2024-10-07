@@ -1,15 +1,18 @@
 import React from "react";
-import cartImage from "../images/cardimage.png"
-import "../App.css"
+import "../App.css";
 
-function RestaurantCard() {
+function RestaurantCard(props) {
+  const { resdata } = props;
   return (
+    
     <div className="res-card">
-      <img className="res-img" src={cartImage} alt="cart Image"></img>
-      <h3>Meghana Foods</h3>
-      <h4>Biriyani, North Indian, Asian</h4>
-      <h4>4.4 stars</h4>
-      <h5>38 minutes</h5>
+      <img className="res-img" src={resdata.cloudinaryImageId} alt={`${resdata.name} Image`} />
+      <h3><i>Name</i>:{resdata.name}</h3>
+      <h4><i>Cuisines</i>:{resdata.cuisines.join(", ")}</h4>
+      <h4><i>Location</i>:{resdata.areaName} </h4>
+      <h4><i>Ratings</i>:{resdata.avgRating} stars</h4>
+      <h4><i>Price</i>:{resdata.costForTwo}</h4>
+      <h4><i>Time</i>:{resdata.sla.deliveryTime} minutes</h4>
     </div>
   );
 }
