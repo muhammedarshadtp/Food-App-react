@@ -12,7 +12,7 @@ function RestaurantCard(props) {
       <h4><i>Location</i>:{resdata.areaName} </h4>
       <h4><i>Ratings</i>:{resdata.avgRating} stars</h4>
       <h4><i>Price</i>:{resdata.costForTwo}</h4>
-      <h4><i>Time</i>:{resdata.sla.deliveryTime} minutes</h4>
+      <h4><i>Timef</i>:{resdata.sla.deliveryTime} minutes</h4>
     </div>
   );
 }
