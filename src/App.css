@@ -93,4 +93,30 @@
   padding: 15px; /* Padding inside the card */
   text-align: center; /* Center-align the content */
 }
+.filter-btn {
+  cursor: pointer;
+  margin: 10px;
+}
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.shimmer-card {
+  width: 200px;
+  height: 400px;
+  background-color: gray;
+  margin: 20px;
+}
+.login {
+  padding: 10px 20px;
+  cursor: pointer;
+  color: rgb(74, 72, 72); /* Ensure text is readable */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Add slight rounded corners */
+  font-size: 16px; /* Improve readability with larger font */
+  font-weight: bold; /* Make the text bold */
+ 
+}
+
+
 
