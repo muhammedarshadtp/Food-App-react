@@ -8,6 +8,13 @@ import Shimmer from "./Shimmer";
 function Body() {
   const [resList,setList] = useState([]);
 
+  const [searchText,setSearchText] = useState("");
+
+  const [filteredList, setFilteredList] = useState([]);
+
+  // whenever state variable update, react triggers a reconsilation cycle (re-renders the components)
+  console.log("Body Rendered");
+
 
   useEffect (()=>{
     fetchdata();
@@ -18,9 +25,10 @@ function Body() {
 
     const json = await data.json()
     console.log(json);
-    setList(json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    const restaurants =(json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    setList(restaurants)
+    setFilteredList(restaurants)
   }
-  console.log(resList,"kitty");
   if(resList?.length === 0){
     return <Shimmer/>
   }
@@ -31,13 +39,17 @@ function Body() {
     <div className="body"> <br />
       <div className="filter"> 
         <div className="search">
-          <input type="text" className="search-bar" />
-          <button>Search</button>
+          <input type="text" className="search-bar" value={searchText} onChange={(e)=>{setSearchText(e.target.value)}}  />
+          <button onClick={()=>{
+
+            const filteredItems = resList.filter((res)=>res.info.name.toLowerCase().includes(searchText.toLowerCase()))
+            setFilteredList(filteredItems)
+          }}>Search</button>
 
         </div>
         <button
         className="filter-btn" onClick={()=>{
-          const filteredList = resList.filter((res)=> res.avgRating>4.5);
+          const filteredList = resList.filter((res)=> res.info.avgRating > 4.5);
           setList(filteredList);
 
         }}>
@@ -45,7 +57,7 @@ function Body() {
         </div>
       <div className="res-container">
         {/* Loop through the resList array and render a RestaurantCard for each */}
-        {resList.map((restaurant) => (
+        {filteredList.map((restaurant) => (
           <RestaurantCard key={restaurant.id} resdata={restaurant} />
         ))}
       </div>

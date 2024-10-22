@@ -3,8 +3,6 @@ import "../App.css";
 
 function RestaurantCard(props) {
   const { resdata } = props;
-  console.log(resdata,"ithum");
-  console.log(resdata.info.cloudinaryImageId,"image id");
   const imageUrl = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${resdata.info.cloudinaryImageId}`;
 
   return (
