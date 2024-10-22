@@ -28,11 +28,16 @@ function Body() {
 
 
   return (
-    <div className="body">
-      <div className="filter">
+    <div className="body"> <br />
+      <div className="filter"> 
+        <div className="search">
+          <input type="text" className="search-bar" />
+          <button>Search</button>
+
+        </div>
         <button
         className="filter-btn" onClick={()=>{
-          const filteredList = resList.filter((res)=> res.avgRating>4);
+          const filteredList = resList.filter((res)=> res.avgRating>4.5);
           setList(filteredList);
 
         }}>

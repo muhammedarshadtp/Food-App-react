@@ -93,19 +93,31 @@
   padding: 15px; /* Padding inside the card */
   text-align: center; /* Center-align the content */
 }
+
 .filter-btn {
   cursor: pointer;
-  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: bold;
 }
 .shimmer-container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Ensures exactly 5 columns */
+  gap: 20px; /* Adds spacing between the cards */
+  padding: 20px;
 }
+
 .shimmer-card {
-  width: 200px;
-  height: 400px;
-  background-color: gray;
-  margin: 20px;
+  width: 100%;
+  max-width: 200px;
+  height: 320px; /* Same height as res-card */
+  background-color: #f6f7f8; /* Light gray background to mimic loading */
+  border-radius: 8px; /* Match border radius with actual card */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Same shadow as res-card */
+  overflow: hidden;
+  position: relative; /* Needed for shimmer effect */
 }
 .login {
   padding: 10px 20px;
@@ -117,6 +129,20 @@
   font-weight: bold; /* Make the text bold */
  
 }
+.filter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px; /* Adds space between the search bar and filter button */
+  margin-bottom: 20px; /* Optional: Adds space below the filter section */
+}
+.search {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adds space between the input field and search button */
+}
+
+
 
 
 
