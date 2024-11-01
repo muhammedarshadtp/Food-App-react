@@ -21,7 +21,7 @@ function Body() {
   },[]);
 
   const fetchdata = async ()=>{
-    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
+    const data = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
 
     const json = await data.json()
     console.log(json);
@@ -50,7 +50,7 @@ function Body() {
         <button
         className="filter-btn" onClick={()=>{
           const filteredList = resList.filter((res)=> res.info.avgRating > 4.5);
-          setList(filteredList);
+          setFilteredList(filteredList);
 
         }}>
           Top rated</button>

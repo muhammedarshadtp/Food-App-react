@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../images/logo.jpg"
 import "../App.css"
 
 function Header() {
   const [btnreactname,setName] = useState("login")
+
+useEffect(()=>{
+
+},[btnreactname]);
+console.log("useEffect is called");
   return (
     <div className="header">
       <div className="logo-container">
