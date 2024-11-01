@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import "../App.css";
-import resListData from "../utils/mockData";
 import Shimmer from "./Shimmer";
 
 
