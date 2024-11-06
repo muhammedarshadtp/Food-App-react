@@ -15,11 +15,11 @@ console.log("useEffect is called");
         <img className="logo" src={logo} alt="LOGO" />
       </div>
       <div className="nav-items">
-        <ul>
+        <ul className="header-link">
           <li><Link to={"/"}>Home</Link></li>
           <li> <Link to={"/about"}>About</Link> </li>
           <li><Link to={"/contact"}>Contact</Link></li>
-          <li>Cart</li>
+          <li><Link to={"/cart"}>Cart</Link></li>
           <button className="login"
           onClick={()=>{
             btnreactname === 'login' ? setName("logout") : setName("login")
