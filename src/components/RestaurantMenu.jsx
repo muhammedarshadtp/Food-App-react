@@ -25,7 +25,7 @@ const RestaurantMenu = ()=>{
     if(resInfo === null) return <Shimmer/>
     const {name,city,costForTwoMessage,avgRating}=resInfo?.cards[2]?.card?.card?.info;
     const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
-    console.log(itemCards,'itemskitty');
+    
  
 
 
@@ -53,7 +53,7 @@ const RestaurantMenu = ()=>{
                    <div className="menu-item-price">
                                 ₹{item.card.info.price / 100 || item.card.info.defaultPrice/100}
                             </div>
-                            
+
                  </div>
                  </li>
                 )
