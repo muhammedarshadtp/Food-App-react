@@ -7,8 +7,14 @@ class UserClass extends React.Component{
         this.state={
             count:0,
         }
+        console.log("child constructor");
     }
+    componentDidMount(){
+        console.log("child componentDidMount");
+    }
+
     render(){
+        console.log("child render");
         const{name,location,email}=this.props
         const{count }=this.state
         return(
@@ -20,7 +26,7 @@ class UserClass extends React.Component{
                         count : this.state.count + 1
                     })
                 }}>Increses</button>  
-                
+
                 <button onClick={()=>{
                     this.setState({
                         count : this.state.count -1
