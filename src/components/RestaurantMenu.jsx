@@ -1,26 +1,15 @@
-import { useEffect, useState } from "react";
+
 import Shimmer from "./Shimmer";
 import "../App.css";
-import { data } from "@remix-run/router";
 import { useParams } from "react-router-dom";
-import { MENU_API_BASE_URL } from "../utils/constant";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
+
 
 
 
 const RestaurantMenu = ()=>{
-    const [resInfo,SetResInfo]=useState(null)
     const {id} = useParams()
-    useEffect (()=>{
-        fetchData();
-
-    },[])
-    const fetchData = async ()=>{
-        const data = await fetch(`${MENU_API_BASE_URL}&restaurantId=${id}` );
-        console.log(data,"data kitty");
-        const json= await data.json()
-       SetResInfo(json.data)
-
-    }
+    const resInfo = useRestaurantMenu(id);
     
     if(resInfo === null) return <Shimmer/>
     const {name,city,costForTwoMessage,avgRating}=resInfo?.cards[2]?.card?.card?.info;
