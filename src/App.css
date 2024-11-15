@@ -282,6 +282,34 @@
   color: red;
 }
 
+/* App.css */
+.status-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  z-index: 1000;
+}
+
+.offline {
+  background-color: #f44336; /* Red for offline */
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    top: -50px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+
 
 
 

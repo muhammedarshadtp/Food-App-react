@@ -15,11 +15,6 @@ const RestaurantMenu = ()=>{
     const {name,city,costForTwoMessage,avgRating}=resInfo?.cards[2]?.card?.card?.info;
     const {itemCards} = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
     
- 
-
-
-    
-    
     return (
         <div className="menu">
          <div className="restaurant-info">

@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import "../App.css";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 function Body() {
@@ -13,8 +14,6 @@ function Body() {
   const [filteredList, setFilteredList] = useState([]);
 
   // whenever state variable update, react triggers a reconsilation cycle (re-renders the components)
-  console.log("Body Rendered");
-
 
   useEffect (()=>{
     fetchdata();
@@ -24,16 +23,35 @@ function Body() {
     const data = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
 
     const json = await data.json()
-    console.log(json);
     const restaurants =(json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     setList(restaurants)
     setFilteredList(restaurants)
   }
+
+  const onlineStatus=useOnlineStatus();
+
+  if(onlineStatus === false){
+    return(
+      <div className="body">
+      {/* Only show the offline notification bar when offline */}
+      {!onlineStatus && (
+        <div className="status-bar offline">
+          🚨 Uh-oh! You've gone offline! Looks like Wi-Fi went on vacation 🌴. 
+          Refresh your connection to get back to browsing! 📡💨
+        </div>
+      )}
+
+      {/* The rest of your component logic here */}
+      <div className="res-container">
+        {/* Your restaurant listing */}
+      </div>
+    </div>
+    )
+  }
+
   if(resList?.length === 0){
     return <Shimmer/>
   }
-
-
 
   return (
     <div className="body"> <br />
