@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import RestaurantCard from "./RestaurantCard";
 import "../App.css";
 import Shimmer from "./Shimmer";
@@ -13,7 +13,7 @@ function Body() {
   const [searchText,setSearchText] = useState("");
   const onlineStatus=useOnlineStatus();
 
-  
+
   if(!onlineStatus){
     return(
       <div className="body">
