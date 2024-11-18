@@ -7,14 +7,17 @@ function RestaurantCard(props) {
 
   return (
     
-    <div className="res-card">
-      <img className="res-img" src={imageUrl} alt={`${resdata.name} Image`} /> <br />
-      <h3><i>Name</i>:{resdata.info.name}</h3>
-      <h4><i>Cuisines</i>:{resdata.info.cuisines}</h4>
-      <h4><i>Location</i>:{resdata.info.areaName} </h4>
-      <h4><i>Ratings</i>:{resdata.info.avgRating} stars</h4>
-      <h4><i>Price</i>:{resdata.info.costForTwo}</h4>
-      {/* <h4><i>Timef</i>:{resdata.sla.deliveryTime} minutes</h4> */}
+    <div className="m-4 p-4 w-[230px] bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadowl">
+      <img className="rounded-lg w-full h-[150px] object-cover" 
+       src={imageUrl} alt={`${resdata.name} Image`} />
+     <div className="mt-4">
+    <h3 className="font-bold text-lg truncate">{resdata.info.name}</h3>
+    <h2 className="text-gray-600 text-sm"><i>Cuisines:</i> {resdata.info.cuisines.join(", ")}</h2>
+    <h2 className="text-gray-600 text-sm"><i>Location:</i> {resdata.info.areaName}</h2>
+    <h2 className="text-gray-600 text-sm"><i>Ratings:</i> {resdata.info.avgRating} ⭐</h2>
+    <h2 className="text-gray-600 text-sm"><i>Price:</i> {resdata.info.costForTwo}</h2>
+  </div>
+
     </div>
   );
   
