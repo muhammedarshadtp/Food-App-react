@@ -22,5 +22,18 @@ function RestaurantCard(props) {
   );
   
 }
+export const withExtraOffers=(RestaurantCard)=>{
+  return (props)=>{
+    return(
+      <div className="relative">
+        <div className="absolute -left-3 top-4 bg-orange-500 text-white font-bold text-xs py-1 px-3 rounded-md rotate-[-10deg] z-10">
+          Flat Offer
+        </div>
+        <RestaurantCard {...props} />
+      </div>
+    )
+  }
+  
+}
 
 export default RestaurantCard;

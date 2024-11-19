@@ -3,6 +3,7 @@ import Shimmer from "./Shimmer";
 import "../App.css";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 
@@ -10,6 +11,26 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 const RestaurantMenu = () => {
   const { id } = useParams()
   const resInfo = useRestaurantMenu(id);
+  const onlineStatus=useOnlineStatus();
+
+  if(!onlineStatus){
+    return(
+      <div className="body">
+  {/* Offline Notification Bar */}
+  {!onlineStatus && (
+    <div className="bg-red-500 text-white text-center py-4 rounded-lg shadow-md mb-6">
+      <p className="text-lg font-semibold flex items-center justify-center gap-2">
+        🚨 <span>Uh-oh! You've gone offline!</span>
+      </p>
+      <p className="mt-2 text-sm">
+        Looks like Wi-Fi went on vacation 🌴. Refresh your connection to get back to browsing! 📡💨
+      </p>
+    </div>
+  )}
+</div>
+    )
+  }
+
 
   if (resInfo === null) return <Shimmer />
   const { name, city, costForTwoMessage, avgRating } = resInfo?.cards[2]?.card?.card?.info;
