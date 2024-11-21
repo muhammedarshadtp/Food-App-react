@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import RestaurentCarategory from "./RestaurentCategory";
+import { useState } from "react";
 
 
 
@@ -13,6 +14,8 @@ const RestaurantMenu = () => {
   const { id } = useParams()
   const resInfo = useRestaurantMenu(id);
   const onlineStatus = useOnlineStatus();
+
+  const [showindex,setShowIndex]=useState(null)
 
   if (!onlineStatus) {
     return (
@@ -59,8 +62,13 @@ const RestaurantMenu = () => {
         </div>
       </div>
       <div className="text-center">
-      {categories.map((category)=>
-        <RestaurentCarategory key={category?.card?.card.title} data={category?.card?.card}/>       
+      {categories.map((category,index)=>
+      // controled components
+        <RestaurentCarategory key={category?.card?.card.title} 
+        data={category?.card?.card}
+        showItem={index === showindex}
+        setShowIndex={()=>setShowIndex(index === showindex ? null : index)}
+        /> 
       )}
       </div>
     </div>

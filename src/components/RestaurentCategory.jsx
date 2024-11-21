@@ -3,10 +3,9 @@ import ItemList from "./ItemList";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io"
 
 
-const RestaurentCarategory = ({ data }) => {
-    const [showItem,setShowItem]=useState(false)
+const RestaurentCarategory = ({ data,showItem,setShowIndex}) => {
     const handleClick= ()=>{
-        setShowItem(!showItem )
+        setShowIndex();
     }
     return (
         <div>

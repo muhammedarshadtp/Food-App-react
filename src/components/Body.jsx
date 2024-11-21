@@ -40,7 +40,7 @@ function Body() {
   return (
     <div className="body overflow-x-hidden">
       <br />
-      <div className="filter flex flex-wrap justify-center">
+      <div className="filter flex flex-wrap justify-center ">
         <div className="search flex items-center space-x-4 w-full md:w-auto">
           <input type="text"
             className="border border-gray-300 rounded-lg p-2 w-80 max-w-md"
@@ -67,7 +67,7 @@ function Body() {
         </div>
       </div>
 
-      <div className="flex flex-wrap">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-2 mt-6">
         {/* Loop through the resList array and render a RestaurantCard for each */}
         {filteredList.map((restaurant) => (
           <Link
