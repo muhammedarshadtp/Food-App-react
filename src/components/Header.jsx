@@ -1,11 +1,14 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import logo from "../images/logo.jpg"
 import "../App.css"
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import userContext from "../utils/userContext";
 function Header() {
   const [btnreactname, setName] = useState("login")
   const onlineStatus = useOnlineStatus()
+  const {loggedUser}=useContext(userContext)
+  console.log(loggedUser,"jbihuh")
 
   useEffect(() => {
 
@@ -31,6 +34,7 @@ function Header() {
           >
             {btnreactname}
           </button>
+          
           <li>
             Online Status:{" "}
             {onlineStatus ? (
@@ -39,6 +43,7 @@ function Header() {
               <span style={{ color: "red" }}>❌</span>
             )}
           </li>
+          <li  className="hover:text-pink-600">User:{loggedUser}</li>
         </ul>
       </div>
     </div>
