@@ -4,11 +4,15 @@ import "../App.css"
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import userContext from "../utils/userContext";
+import { useSelector } from "react-redux";
 function Header() {
   const [btnreactname, setName] = useState("login")
   const onlineStatus = useOnlineStatus()
   const {loggedUser}=useContext(userContext)
-  console.log(loggedUser,"jbihuh")
+
+  const cartItem=useSelector((store)=>store.cart)
+  console.log(cartItem)
+ 
 
   useEffect(() => {
 
@@ -24,7 +28,7 @@ function Header() {
           <li className="hover:text-pink-600"><Link to={"/"}>Home</Link></li>
           <li  className="hover:text-pink-600"> <Link to={"/about"}>About</Link> </li>
           <li  className="hover:text-pink-600"><Link to={"/contact"}>Contact</Link></li>
-          <li  className="hover:text-pink-600"><Link to={"/cart"}>Cart</Link></li>
+          <li  className="hover:text-pink-600"><Link to={"/cart"}>Cart-{cartItem.length} </Link></li>
           <li  className="hover:text-pink-600"><Link to={"/grocery"}>Grocery</Link></li>
           <button className="login"
             onClick={() => {

@@ -13,8 +13,7 @@ function Body() {
   const [searchText, setSearchText] = useState("");
   const onlineStatus = useOnlineStatus();
   const ExtraOffers=withExtraOffers(RestaurantCard)
-
-  console.log(resList);
+  
   if (!onlineStatus) {
     return (
       <div className="body">
