@@ -31,3 +31,9 @@ Currently, two official plugins are available:
 -Slice(cart slice)
 -Dispatch(action)
 -Selector
+
+
+# Type of testing (developer)
+-unit testing
+-integration testing
+-End to End testing - e2e testing
