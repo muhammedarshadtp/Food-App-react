@@ -13,11 +13,17 @@ const useFetchRestaurants =()=>{
 
   const fetchdata = async ()=>{
     console.log('hai api call 123')
+
+    const proxyUrl = "https://cors-anywhere.herokuapp.com/";
+    const targetUrl = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550";
+    const data = await fetch(proxyUrl + targetUrl);
+    console.log(data,'data in the fetch')
+
     
     // const data = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
-    const data = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550", {
-      mode: "no-cors"
-    });
+    // const data = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550", {
+    //   mode: "no-cors"
+    // });
     
     const json = await data.json()
     const restaurants =(json?.data?.cards?.[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
