@@ -18,31 +18,31 @@ const Grocery = lazy(()=>(import('./components/Grocery.jsx')))
 
 const appRouter = createBrowserRouter([
     {
-      path:'/Food-App-react/',
+      path:'/',
       element:<App/>,
       children:[
         {
-            path:'/Food-App-react/',
+            path:'/',
             element:<Body/>,
           },
             {
-                path:'/Food-App-react/about',
+                path:'/about',
                 element:<About/>,
               },
               {
-                  path:'/Food-App-react/contact',
+                  path:'/contact',
               element:<Contact/>,
               },
               {
-                path:'/Food-App-react/restaurant/:id',
+                path:'/restaurant/:id',
             element:<RestaurantMenu/>,
             },
             {
-              path:'/Food-App-react/cart',
+              path:'/cart',
           element:<Cart/>,
           },
           {
-            path:'/Food-App-react/grocery',
+            path:'/grocery',
         element:<Suspense fallback={<div>Loading...</div>}>
           <Grocery/>
         </Suspense>  ,
