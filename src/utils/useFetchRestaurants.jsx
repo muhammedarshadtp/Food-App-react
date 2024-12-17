@@ -12,13 +12,11 @@ const useFetchRestaurants =()=>{
   },[]);
 
   const fetchdata = async ()=>{
-    console.log('hai api call')
+    console.log('hai api call 123')
     
     // const data = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")
     const data = await fetch("https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550", {
-      headers: {
-        "Cache-Control": "no-cache"
-      }
+      mode: "no-cors"
     });
     
     const json = await data.json()
