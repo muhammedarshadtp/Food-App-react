@@ -11,8 +11,9 @@ const useFetchRestaurants = () => {
     fetchdata();
   }, []);
 
+
   const fetchdata = async () => {
-    console.log('hai api call 123')
+
 
     // const proxyUrl = "https://cors-anywhere.herokuapp.com/";
     // const targetUrl = "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.96340&lng=77.58550";
