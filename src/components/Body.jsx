@@ -37,7 +37,7 @@ function Body() {
   // }
 
   return (
-    resList.length>0 ?  
+    resList?.length>0 ?  
     <div className="body overflow-x-hidden">
       <br />
       <div className="filter flex flex-wrap justify-center ">
