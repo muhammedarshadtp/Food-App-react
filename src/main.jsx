@@ -9,7 +9,6 @@ import Error from './components/Error.jsx'
 import Body from './components/Body.jsx'
 import RestaurantMenu from './components/RestaurantMenu.jsx'
 import Cart from './components/Cart.jsx'
-import { HeroUIProvider } from '@heroui/react'
 // import Grocery from './components/Grocery.jsx'
 
 
@@ -58,9 +57,9 @@ const appRouter = createBrowserRouter([
   ])
 
 createRoot(document.getElementById('root')).render(
-<HeroUIProvider>
+
   <StrictMode>
     <RouterProvider router={appRouter} />
   </StrictMode>,
-  </HeroUIProvider>
+  
 )
