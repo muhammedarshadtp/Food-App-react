@@ -1,11 +1,11 @@
 
-import Shimmer from "./Shimmer";
 import "../App.css";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import RestaurentCarategory from "./RestaurentCategory";
 import { useState } from "react";
+import ShimmerCard from "./ShimmerCard";
 
 
 
@@ -35,8 +35,7 @@ const RestaurantMenu = () => {
     )
   }
 
-
-  if (resInfo === null) return <Shimmer />
+  if (resInfo === null) return <ShimmerCard />
   const { name, city, costForTwoMessage, avgRating } = resInfo?.cards[2]?.card?.card?.info;
   // const { itemCards } = resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card;
 

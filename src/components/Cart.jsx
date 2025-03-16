@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { imageUrl } from "../utils/constant";
 import { clearItems, removeItems } from "../utils/cartSlice";
+import ShimmerCart from "./ShimmerCart";
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart);
@@ -14,6 +15,7 @@ const Cart = () => {
   }
 
   return (
+    cartItems ?
     <div className="min-h-screen bg-gray-100 flex justify-center py-8">
       <div className="w-full max-w-4xl p-4 bg-white shadow-md rounded-lg">
         <div className="flex items-center justify-between mb-6 border-b pb-3">
@@ -63,6 +65,8 @@ const Cart = () => {
         </div>
       </div>
     </div>
+    : 
+    <ShimmerCart/>
   );
 };
 

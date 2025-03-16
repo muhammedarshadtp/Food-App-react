@@ -32,11 +32,12 @@ function Body() {
     )
   }
 
-  if (resList?.length === 0) {
-    return <Shimmer />
-  }
+  // if (resList?.length === 0) {
+  //   return <Shimmer />
+  // }
 
   return (
+    resList.length>0 ?  
     <div className="body overflow-x-hidden">
       <br />
       <div className="filter flex flex-wrap justify-center ">
@@ -85,6 +86,7 @@ function Body() {
         ))}
       </div>
     </div>
+    : <Shimmer/>
   );
 }
 
